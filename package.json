@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@types/node": "^20.12.7",
+    "@types/npm": "^7.19.3"
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./../../dist/services/getData.js" defer>
+    </script>
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+        }
+        a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        div {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+        }
+        #output {
+            margin: 20px;
+            padding: 20px;
+            background-color:aquamarine;
+            color: chocolate;
+        }
+        #sender {
+            margin: 20px;
+            padding: 20px;
+            background-color:lightcoral;
+            color: chocolate;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Index</h1>
+    <p>Index page</p>
+    <a href="about.html">About</a>
+
+    <div>
+        <h2>Welocme</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+    </div>
+
+    <h1>HTTP Long-Polling Example</h1>
+    <input type="text" id="name_input" placeholder="Enter your name">
+    <button style="background-color: cornflowerblue;" id="get_btn">Click</button>
+    <button style="background-color: indianred;" id="stop_btn">Stop</button>
+    <br>
+
+    <div id="output_container">
+
+    <div id="output">
+    </div>
+        <br>
+        <div id="sender" >
+            <input type="text" id="message_input" placeholder="Enter your message">
+            <button style="background-color: cornflowerblue;" id="post_btn">Send</button>
+        </div>
+    </div>
+
+</body>
+</html>

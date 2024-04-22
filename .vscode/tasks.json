@@ -1,0 +1,302 @@
+{
+    "version": "2.0.0", /* MAKE SURE THIS LINE IS EXACTLY THE SAME */
+
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": false
+    },
+
+    "tasks": [
+        {
+            "label": "task|runPHPWebServer",
+            "dependsOn": [
+                "Open Running Terminal",
+                "Run PHP Web Server"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 5
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+        },
+
+        {
+            "label": "New Passive Terminal",
+            "detail": "Passive Terminal",
+            "type": "shell",
+            "command": "workbench.action.terminal.newWithProfile",
+            "args": ["name:Passive Terminal"],
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                    "args": []
+                },
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "NODE_ENV": "development"
+                }
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "group": "my-group3",
+                "panel": "shared",
+                "focus": true
+            }
+        },
+
+
+        {
+            "label": "Run PHP Web Server",
+            "detail": "Running Web Server task",
+            "type": "shell",
+            "command": "php -S localhost:8000 -t ${relativeFileDirname}",
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                    "args": []
+                },
+                "cwd": "${workspaceFolder}",
+                "env": {
+                    "NODE_ENV": "development"
+                }
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "group": "my-group3"
+            }
+        },
+
+
+
+    ]
+}
+
+        /*
+
+
+        {
+            "label": "task|createServerAndClients",
+            "dependsOn": [
+                "Run Server",
+                "Run Client1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 5
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run x",
+            "type": "shell",
+            "detail": "X tassdgk",
+            "command": "workbench.action.terminal.nameWithArg",
+            "args": [
+                "name:sfgsf"
+            ],
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+                },
+                "env": {
+                    "NODE_ENV": "development"
+                }
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "group": "my-group"
+            }
+        },
+
+        {
+            "label": "Run Client1",
+            "type": "shell",
+            "detail": "Running Client #1 task",
+            "command": "ts-node ${workspaceFolder}\\src\\app\\app.ts",
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                    "args": []
+                },
+                "cwd": "${workspaceFolder}/src/app",
+                "env": {
+                    "NODE_ENV": "development"
+                }
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "group": "my-group"
+            }
+        },
+
+        {
+            "label": "Run Client2",
+            "type": "shell",
+            "detail": "Running Client #2 task",
+            "command": "ts-node ${workspaceFolder}\\src\\app\\app2.ts",
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                    "args": []
+                },
+                "cwd": "${workspaceFolder}/src/app",
+                "env": {
+                    "NODE_ENV": "development"
+                }
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "group": "my-group"
+            }
+        },
+
+        {
+            "label": "Run Client3",
+            "type": "shell",
+            "detail": "Running Client #3 task",
+            "command": "ts-node ${workspaceFolder}\\src\\app\\app3.ts",
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                    "args": []
+                },
+                "cwd": "${workspaceFolder}/src/app",
+                "env": {
+                    "NODE_ENV": "development"
+                }
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "group": "my-group"
+            }
+        },
+
+                {
+            "label": "task|createTerminals",
+            "dependsOn": [
+                "Run Server",
+                "Run Client1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 4
+            }
+        },
+
+        {
+            "label": "Run Server",
+            "detail": "Running Server task",
+            "type": "shell",
+            "command": "ts-node ${workspaceFolder}\\src\\server\\app\\app.ts",
+            "options": {
+                "shell": {
+                    "executable": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                    "args": []
+                },
+                "cwd": "${workspaceFolder}/src/server/app",
+                "env": {
+                    "NODE_ENV": "development"
+                }
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "group": "my-group2"
+            }
+        },
+
+        {
+            "label": "task|createTerminals",
+            "dependsOn": [
+                "Run Server",
+                "Run Client1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "runOptions": {
+                "runOn": "folderOpen",
+                "instanceLimit": 4
+            }
+        }
+
+        //{
+       //  
+       //     "label": "task|setConsolePre",
+       //     "command": "${input:setConsolePreX}"
+      //  },
+      //  {
+     //     
+      //      "label": "task|setConsolePost",
+      ////      "command": "${input:setConsolePreX}"
+       // }
+
+    ],
+
+
+    // INPUT DEFINITIONS
+    "inputs": [
+        
+        {
+            "id": "setConsolePreX",
+            "type": "command",
+            "command": "workbench.action.terminal.newWithProfile",
+            "args": {"profileName": "Running Term", "location": "editor"},
+        },
+
+        {
+            "id": "setConsolePostX",
+            "type": "command",
+            "command": "workbench.action.terminal.newWithProfile",
+            "args": {"profileName": "Running Term", "location": "editor"},
+        },
+
+
+        {
+            "id": "setConsolePreName",
+            "type": "command",
+            "command": "workbench.action.terminal.renameWithArg",
+            "args": {"name": "Running ${fileBasename}"},
+        },
+
+        {
+            "id": "setConsolePostName",
+            "type": "command",
+            "command": "workbench.action.terminal.nameWithArg",
+            "args": {"name": "Stopped ${relativeFile}"},
+        },
+
+    ]
+}
+*/

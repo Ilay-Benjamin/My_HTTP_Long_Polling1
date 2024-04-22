@@ -1,0 +1,9 @@
+!.gitignore
+!package-lock.json
+!package.json
+!tsconfig.json
+!/.vscode
+!/src
+!/dist
+/node_modules
+tsconfig.tsbuildinfo
